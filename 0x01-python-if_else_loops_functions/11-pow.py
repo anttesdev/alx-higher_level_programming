@@ -5,10 +5,8 @@ def pow(a, b):
     if b < 0:
         a = 1 / a
         b = abs(b)
-
     result = 1
 
     for _ in range(b):
         result *= a
-
     return result
