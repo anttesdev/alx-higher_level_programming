@@ -12,5 +12,5 @@ if __name__ == "__main__":
     if sys.argv[2] not in op:
         print("Unknown operator. Available operators: +, -, * and /")
         sys.exit(1)
-    result = op[sys.argv[2]](a,b)
+    result = op[sys.argv[2]](a, b)
     print("{} {} {} = {}".format(a, sys.argv[2], b, result))
