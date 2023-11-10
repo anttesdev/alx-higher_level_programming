@@ -30,10 +30,10 @@ void print_python_bytes(PyObject *p)
 }
 
 /**
- * print_list - Print information about Python list
+ * print_python_list - Print information about Python list
  * @p: PyObject pointer to a Python list object
  */
-void print_list(PyObject *p)
+void print_python_list(PyObject *p)
 {
 	PyListObject *list;
 	Py_ssize_t size, i;
