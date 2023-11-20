@@ -79,9 +79,9 @@ void print_python_list(PyObject *p)
 		printf("Element %ld: %s\n", i, ((pyt)->ob_type)->tp_name);
 
 		if (PyBytes_Check(pyt))
-			print_python_bytes(obj);
+			print_python_bytes(pyt);
 		if (PyFloat_Check(pyt))
-			print_python_float(obj);
+			print_python_float(pyt);
 	}
 }
 
