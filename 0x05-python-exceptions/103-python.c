@@ -55,7 +55,7 @@ void print_python_float(PyObject *p)
  * Return: Nothing
  */
 
-void print_python_list(PyObject *p);
+void print_python_list(PyObject *p)
 {
 	Py_ssize_t size, i;
 	PyListObject *total;
