@@ -132,9 +132,9 @@ class SinglyLinkedList:
         Returns:
             str: The string representation of the linked list.
         """
-        result = []
+        result = ""
         current = self.head
         while current is not None:
-            result.append(str(current.data))
+            result += str(current.data) + "\n"
             current = current.next_node
-        return "\n".join(result)
+        return result[:-1]
