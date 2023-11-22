@@ -1,8 +1,6 @@
 #!usr/bin/python3
 
-"""
-A node class
-"""
+""" Defining a  class called Node"""
 
 
 class Node:
