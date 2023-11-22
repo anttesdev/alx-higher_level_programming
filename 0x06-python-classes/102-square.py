@@ -27,26 +27,26 @@ class Square:
         """Calculates the area of the square"""
         return self.__size * self.__size
 
-    def __eq__(self, other):
+    def __eq__(self, another):
         """Equal comparator"""
-        return self.area() == other.area()
+        return self.area() == another.area()
 
-    def __ne__(self, other):
+    def __ne__(self, another):
         """Not equal comparator"""
-        return self.area() != other.area()
+        return self.area() != another.area()
 
-    def __lt__(self, other):
+    def __lt__(self, another):
         """Less than comparator"""
-        return self.area() < other.area()
+        return self.area() < another.area()
 
-    def __le__(self, other):
+    def __le__(self, another):
         """Less than or equal comparator"""
-        return self.area() <= other.area()
+        return self.area() <= another.area()
 
-    def __gt__(self, other):
+    def __gt__(self, another):
         """Greater than comparator"""
-        return self.area() > other.area()
+        return self.area() > another.area()
 
-    def __ge__(self, other):
+    def __ge__(self, another):
         """Greater than or equal comparator"""
-        return self.area() >= other.area()
+        return self.area() >= another.area()
