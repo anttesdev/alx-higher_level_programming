@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-"""Defines a MagicClass to match the byte code provided"""
+"""Defines a MagicClass to match the provided bytecode"""
 
 import math
 
@@ -16,8 +16,8 @@ class MagicClass:
         """
         self.__radius = 0
 
-        if not isinstance(radius, (int, float)):
-            raise TypeError("radius must be a numeric value")
+        if type(radius) is not int and type(radius) is not float:
+            raise TypeError("radius must be a number")
 
         self.__radius = radius
 
