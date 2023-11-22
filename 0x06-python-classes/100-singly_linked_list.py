@@ -77,11 +77,6 @@ class Node:
         self.__next_node = value
 
 
-"""
-a class for singly linked list
-"""
-
-
 class SinglyLinkedList:
     """
     Represents a singly linked list.
