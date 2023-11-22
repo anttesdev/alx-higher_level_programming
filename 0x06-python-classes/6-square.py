@@ -12,7 +12,7 @@ class Square:
 
         Args:
             size(int): the size of the new square created
-            position(tuple): the positon of the square 
+            position(tuple): the positon of the square
 
             """
         self.size = size
