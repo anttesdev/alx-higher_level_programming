@@ -62,7 +62,8 @@ class Rectangle:
         """Returns a string representation of the rectangle."""
         if self.__width == 0 or self.__height == 0:
             return ""
-        return "\n".join([str(self.print_symbol) * self.__width] * self.__height)
+        symbol_line = str(self.print_symbol) * self.__width
+        return "\n".join([symbol_line] * self.__height)
 
     def __repr__(self):
         """Returns a string representation for recreation."""
@@ -86,7 +87,8 @@ class Rectangle:
             Rectangle: The bigger rectangle.
 
         Raises:
-            TypeError: If either rect_1 or rect_2 is not an instance of Rectangle.
+            TypeError: If either rect_1 or
+            rect_2 is not an instance of Rectangle.
         """
         if not isinstance(rect_1, Rectangle):
             raise TypeError("rect_1 must be an instance of Rectangle")
