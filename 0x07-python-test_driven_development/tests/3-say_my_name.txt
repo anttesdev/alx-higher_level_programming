@@ -1,0 +1,66 @@
+A function that prints My name is <first name> <last name>
+
+    Args:
+        first_name (str): the first name
+        last_name (str): the last name (default is an empty string)
+
+    Raises:
+        TypeError: If first_name is not a string or last_name is not a string
+
+    Examples:
+	import the function
+	>>> say_my_name = __import__('3-say_my_name').say_my_name	
+
+        >>> say_my_name("Eleanor", "Rigby")
+        My name is Eleanor Rigby
+
+        >>> say_my_name("Finn")
+        My name is Finn
+
+        >>> say_my_name("Grace", None)
+        Traceback (most recent call last):
+            ...
+        TypeError: last_name must be a string
+
+        >>> say_my_name(None)
+        Traceback (most recent call last):
+            ...
+        TypeError: first_name must be a string
+
+        >>> say_my_name(123, "Smith")
+        Traceback (most recent call last):
+            ...
+        TypeError: first_name must be a string
+
+        >>> say_my_name("Bob", "")
+        My name is Bob
+
+        >>> say_my_name("", "Smith")
+        My name is  Smith
+
+        >>> say_my_name("  Mary", "Johnson  ")
+        My name is   Mary Johnson  
+
+        >>> say_my_name("@", "#")
+        My name is @ #
+
+        >>> say_my_name("José", "García")
+        My name is José García
+
+        >>> say_my_name("123", "456")
+        My name is 123 456
+
+        >>> say_my_name(None, "Doe")
+        Traceback (most recent call last):
+            ...
+        TypeError: first_name must be a string
+
+        >>> say_my_name("John", None)
+        Traceback (most recent call last):
+            ...
+        TypeError: last_name must be a string
+
+        >>> say_my_name("John", 123)
+        Traceback (most recent call last):
+            ...
+        TypeError: last_name must be a string
