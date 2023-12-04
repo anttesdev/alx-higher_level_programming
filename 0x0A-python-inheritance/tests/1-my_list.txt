@@ -1,0 +1,52 @@
+A class that inherits a list and implements sorting.
+
+Tests:
+	>>> MyList = __import__('1-my_list').MyList
+	
+
+	Testing print_sorted with a defined list.
+	>>> my_list = MyList([3, 1, 4, 1, 5, 9, 2])
+	>>> my_list.print_sorted()
+	[1, 1, 2, 3, 4, 5, 9]
+
+	Testing print_sorted with an empty list.
+	>>> my_empty_list = MyList()
+	>>> my_empty_list.print_sorted()
+	[]
+	
+	Testing print_sorted after appending different numbers to a list.
+	>>> my_list = MyList()
+	>>> my_list.append(5)
+	>>> my_list.append(2)
+	>>> my_list.append(8)
+	>>> my_list.print_sorted()
+	[2, 5, 8]
+
+	Testing print_sorted with a list containing one element.
+	>>> single_element_list = MyList([42])
+	>>> single_element_list.print_sorted()
+	[42]
+
+	Testing print_sorted after appending the same number multiple times.
+	>>> repeated_number_list = MyList()
+	>>> repeated_number_list.extend([7, 7, 7, 7, 7])
+	>>> repeated_number_list.print_sorted()
+	[7, 7, 7, 7, 7]
+
+	Testing print_sorted with a parent list (expecting an AttributeError).
+	>>> parent_list = [4, 2, 6, 1, 8, 3]
+	>>> parent_list.print_sorted()
+	Traceback (most recent call last):
+	...
+	AttributeError: 'list' object has no attribute 'print_sorted'
+
+	Testing print_sorted with a list including negative numbers.
+	>>> negative_numbers_list = MyList([-3, 1, -4, 1, -5, 9, -2])
+	>>> negative_numbers_list.print_sorted()
+	[-5, -4, -3, -2, 1, 1, 9]
+
+	Testing print_sorted with an undefined list (expecting an error).
+	>>> undefined_list = MyList(undefined_list)
+	Traceback (most recent call last):
+	...
+	NameError: name 'undefined_list' is not defined
