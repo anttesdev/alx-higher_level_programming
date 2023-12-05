@@ -15,4 +15,4 @@ def from_json_string(my_str):
         my_str: string to be deserialized
     Return the serialized object
     """
-    return json.load(my_str)
+    return json.loads(my_str)
