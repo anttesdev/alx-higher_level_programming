@@ -63,4 +63,3 @@ class Base:
 
         new_dummy_instance.update(**dictionary)
         return new_dummy_instance
-
