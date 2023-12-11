@@ -17,7 +17,8 @@ class Base:
 
         Parameters:
         - id (int, optional): If provided, assign it to the id attribute.
-          If not provided, increment the object counter and assign the new value to id.
+          If not provided, increment the object
+          counter and assign the new value to id.
         """
         if id is not None:
             self.id = id
