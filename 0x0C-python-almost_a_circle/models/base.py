@@ -5,6 +5,7 @@ Define a base class
 
 
 import json
+import csv
 
 
 class Base:
@@ -73,5 +74,52 @@ class Base:
                 json_string = file.read()
                 list_dicts = cls.from_json_string(json_string)
                 return [cls.create(**dictionary) for dictionary in list_dicts]
+        except FileNotFoundError:
+            return []
+
+    @classmethod
+    def save_to_file_csv(cls, list_objs):
+        """Write the CSV representation of list_objs to a file."""
+        filename = "{}.csv".format(cls.__name__)
+        with open(filename, 'w', newline='') as file:
+            csv_writer = csv.writer(file)
+            if list_objs:
+                if cls.__name__ == "Rectangle":
+                    csv_writer.writerow(["id", "width", "height", "x", "y"])
+                    for obj in list_objs:
+                        csv_writer.writerow(
+                            [getattr(obj, key)
+                                for key in ["id", "width", "height", "x", "y"]]
+                        )
+                elif cls.__name__ == "Square":
+                    csv_writer.writerow(["id", "size", "x", "y"])
+                    for obj in list_objs:
+                        csv_writer.writerow(
+                            [getattr(obj, key)
+                                for key in ["id", "size", "x", "y"]]
+                        )
+
+    @classmethod
+    def load_from_file_csv(cls):
+        """Return a list of instances loaded from a CSV file."""
+        filename = "{}.csv".format(cls.__name__)
+        try:
+            with open(filename, 'r') as f:
+                csv_reader = csv.reader(f)
+                header = next(csv_reader)
+                if (
+                    cls.__name__ == "Rectangle" and
+                    header == ["id", "width", "height", "x", "y"]
+                ):
+                    return [cls(*map(int, row[1:]), id=int(row[0]))
+                            for row in csv_reader]
+                elif (
+                    cls.__name__ == "Square" and
+                    header == ["id", "size", "x", "y"]
+                ):
+                    return [cls(*map(int, row[1:]), id=int(row[0]))
+                            for row in csv_reader]
+                else:
+                    return []
         except FileNotFoundError:
             return []
