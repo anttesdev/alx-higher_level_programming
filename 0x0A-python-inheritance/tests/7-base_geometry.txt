@@ -1,0 +1,106 @@
+
+
+
+Importing class from the module:
+	>>> BaseGeometry = __import__('7-base_geometry').BaseGeometry
+
+
+
+	Passing a dict to the method:
+	>>> obj = BaseGeometry()
+	>>> obj.integer_validator('test', {'key': 'value'})
+	Traceback (most recent call last):
+	...
+	TypeError: test must be an integer
+
+	Passing None to the method:
+	>>> obj.integer_validator('test', None)
+	Traceback (most recent call last):
+	...
+	TypeError: test must be an integer
+
+	Passing a list to the method:
+	>>> obj.integer_validator('test', [1, 2, 3])
+	Traceback (most recent call last):
+	...
+	TypeError: test must be an integer
+
+	Passing a tuple to the method:
+	>>> obj.integer_validator('test', (1, 2, 3))
+	Traceback (most recent call last):
+	...
+	TypeError: test must be an integer
+
+	Passing two arguments to the area method:
+	>>> obj = BaseGeometry()
+	>>> obj.area(2)
+	Traceback (most recent call last):
+	...
+	TypeError: area() takes 1 positional argument but 2 were given
+
+	Passing one argument to the area method:
+	>>> obj = BaseGeometry()
+	>>> obj.area()
+	Traceback (most recent call last):
+	...
+	Exception: area() is not implemented
+
+	Integer_validator with no arguments:
+	>>> obj = BaseGeometry()
+	>>> obj.integer_validator()
+	Traceback (most recent call last):
+	...
+	TypeError: integer_validator() missing 2 required positional arguments: 'name' and 'value'
+
+	Passing three arguments to integer_validator:
+	>>> obj = BaseGeometry()
+	>>> obj.integer_validator('test', 42, 'extra')
+	Traceback (most recent call last):
+	...
+	TypeError: integer_validator() takes 3 positional arguments but 4 were given
+
+	Passing one argument to integer_validator:
+	>>> obj = BaseGeometry()
+	>>> obj.integer_validator('test')
+	Traceback (most recent call last):
+	...
+	TypeError: integer_validator() missing 1 required positional argument: 'value'
+
+	Passing a positive value:
+	>>> obj = BaseGeometry()
+	>>> obj.integer_validator('test', 42)
+
+	Trying to pass a zero value:
+	>>> obj = BaseGeometry()
+	>>> obj.integer_validator('test', 0)
+	Traceback (most recent call last):
+	...
+	ValueError: test must be greater than 0
+
+	Trying to pass a negative value:
+	>>> obj = BaseGeometry()
+	>>> obj.integer_validator('test', -42)
+	Traceback (most recent call last):
+	...
+	ValueError: test must be greater than 0
+
+	Trying to pass a boolean value:
+	>>> obj = BaseGeometry()
+	>>> obj.integer_validator('test', True)
+	Traceback (most recent call last):
+	...
+	TypeError: test must be an integer
+
+	Trying to pass a non-integer argument:
+	>>> obj = BaseGeometry()
+	>>> obj.integer_validator('test', 'not_an_integer')
+	Traceback (most recent call last):
+	...
+	TypeError: test must be an integer
+
+	Trying to print the area:
+	>>> obj = BaseGeometry()
+    	>>> obj.area()
+    	Traceback (most recent call last):
+    	...
+    	Exception: area() is not implemented
